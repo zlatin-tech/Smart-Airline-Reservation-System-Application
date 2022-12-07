@@ -9,5 +9,13 @@ package smart_airline_reservation_system;
  * @author 2249436
  */
 public class AirMilesMember {
+    private int yearsOfMembership;
+    private int airMilesPoints;
     
+    public AirMilesMember(){
+    
+    }
+    public double applyDiscount(double p){
+        return 0;
+    }
 }
