@@ -29,7 +29,11 @@ public class Smart_Airline_Reservation_System {
         
         
         //TESTING THE PASSENGER CLASS
-        Passenger passenger = new Passenger("p431", "John", 21, "hello@gmail.com", "H1H 1H1");
+        Passenger passenger = new Passenger("p001", "John", 21, "hello@gmail.com", "H1H 1H1");
+        
+        System.out.println(passenger);
+        
+        
         
         String str = "hellogmailcom@.k";
         boolean isEmailValid = passenger.isEmailValid(str);

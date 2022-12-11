@@ -124,6 +124,29 @@ public class Passenger {
         return false;
     }//end of isEmailValid
 
+    /**
+     * checks if a given string matches the pattern "A1A 1A1"
+     *
+     * @param zipCode is the string you want to see if it is valid
+     * @return true if the patterns match and false otherwise
+     */
+    public boolean isZipCodeValid(String zipCode) {
+        boolean isZipValid = false;
+        if (zipCode.length() != 7) {
+            isZipValid = false;
+        } else if (zipCode.contains("A1A 1A1")) {
+            isZipValid = true;
+        }
+
+        return isZipValid;
+    }
+
+    /**
+     * generateID gets the previous passenger's ID increments it by 1 and
+     * returns new passenger ID
+     *
+     * @return new ID in as a string formatted "p001"
+     */
     public String generateId() {
         String newPassengerId;
         //declaring char array to store the PREVIOUS ID
@@ -132,18 +155,22 @@ public class Passenger {
         String previousID = getPassengerId();
         //converting the previousID from a string to charArray
         char[] charArray = previousID.toCharArray();
+        //declaring counter for the index of the oldCharArray
         int j = 0;
+        //stores old passengerID in oldCharID but only the ints, without the 'p'
         for (int i = 1; i < charArray.length; i++) {
             if (charArray[i] > 0) {
                 oldCharID[j] = charArray[i];
             }
             j++;
         }
-
+        //converts  oldCharID to string
         previousID = String.valueOf(oldCharID);
-        
+        //converts previousID to int
         int IDNumber = Integer.parseInt(previousID);
+        //increments the passengerID
         IDNumber++;
+        //Formatting the new passenger ID
         if (IDNumber < 10) {
             newPassengerId = ("p00" + IDNumber);
 
@@ -156,5 +183,17 @@ public class Passenger {
         }
 
         return newPassengerId;
+    }
+
+    public String toString() {
+        String str = "-------------------------------------";
+        str = "Passenger Information\n";
+        str += "*********************************\n";
+        str += str.format("%-20s: %s\n", "Passenger Number", passengerId);
+        str += str.format("%-20s: %s\n", "Passenger Name", name);
+        str += str.format("%-20s: %s\n", "Passenger email", email);
+        str += "-------------------------------------";
+
+        return str;
     }
 }
