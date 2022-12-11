@@ -31,6 +31,19 @@ public class Flight {
         numberOfSeatsLeft = 0;
         originalPrice = 0;
     }
+    //deep copy constructor
+    public Flight(Flight flight2){
+        
+        flightNumber = flight2.flightNumber;
+        origin = flight2.origin;
+        destination = flight2.destination;
+        departureDate = flight2.departureDate;
+        departureTime = flight2.departureTime;
+        capacity = flight2.capacity;
+        numberOfSeatsLeft = flight2.numberOfSeatsLeft;
+        originalPrice = flight2.originalPrice;
+        
+    }
 
     /**
      *
@@ -44,7 +57,14 @@ public class Flight {
      * @param orgPrice original price
      */
     public Flight(int flightNum, String org, String dest, String depDate, String depTime, int cap, int numSeatsLeft, double orgPrice) {
-
+        flightNumber = flightNum;
+        origin = org;
+        destination = dest;
+        departureDate = depDate;
+        departureTime = depTime;
+        capacity = cap;
+        numberOfSeatsLeft = numSeatsLeft;
+        originalPrice = orgPrice;
     }
 
     //-----------GETTERS AND SETTERS---------
@@ -168,15 +188,15 @@ public class Flight {
 //        }//end of all IF statements
 //        return false;
 //    }
-//    public String toString(){
-//        String str = "";
-//        str += str.format("%-20s: \n", args);
+   public String toString(){
+        String str = "";
+        str += str.format("%-20s: \n", "Flight Number");
 //        str += str.format(str, args);
 //        str += str.format(str, args);
 //        str += str.format(str, args);
 //        str += str.format(str, args);
 //        str += str.format(str, args);
-//        return str;
-//    }
+        return str;
+    }
 
 }
