@@ -18,7 +18,7 @@ public class Passenger {
 
     //CONSTRUCTORS
     public Passenger() {
-        passengerId = "";
+        passengerId = "p001";
         name = "";
         age = 0;
         email = "";
@@ -32,11 +32,13 @@ public class Passenger {
         email = eMail;
         this.zipCode = zipCode;
     }
+
     /**
      * Constructor that is a deep copy of another Passenger of your choice
+     *
      * @param p is the passenger you want to copy onto this constructor
      */
-    public Passenger(Passenger p){
+    public Passenger(Passenger p) {
         passengerId = p.passengerId;
         name = p.name;
         age = p.age;
@@ -85,10 +87,12 @@ public class Passenger {
         return zipCode;
     }
 //--------------END OF GETTERS AND SETTERS
-    
+
     /**
      * isEmailValid checks if the string inputed is not empty, has '@' that's
-     * neither the first character nor comes before the '.' which is also mendatory
+     * neither the first character nor comes before the '.' which is also
+     * mendatory
+     *
      * @param eMail is an email you want to see if it's valid
      * @return true if the email is valid and false if it isn't
      */
@@ -106,31 +110,51 @@ public class Passenger {
             //if character at current index is @ then store its index in indexOfAtSymbol
             if (eMail.charAt(i) == '@') {
                 indexOfAtSymbol = i;
-            } 
-            //else if the character at current index is . then store its index in indexOfDot
+            } //else if the character at current index is . then store its index in indexOfDot
             else if (eMail.charAt(i) == '.') {
                 indexOfDot = i;
             }
 
         }//end of For Loop
         //@ isn't first;            @ comes before '.';             '.' s index is smaller than the index of last character
-        if (indexOfAtSymbol != 0 && indexOfAtSymbol < indexOfDot && indexOfDot < (eMail.length()-1)) {
+        if (indexOfAtSymbol != 0 && indexOfAtSymbol < indexOfDot && indexOfDot < (eMail.length() - 1)) {
             return true;
         }
 
         return false;
     }//end of isEmailValid
-    
-    public String generateId(){
+
+    public String generateId() {
+        String newPassengerId;
+        //declaring char array to store the PREVIOUS ID
+        char[] oldCharID = new char[3];
+        //get the old passenger ID
         String previousID = getPassengerId();
+        //converting the previousID from a string to charArray
         char[] charArray = previousID.toCharArray();
+        int j = 0;
         for (int i = 1; i < charArray.length; i++) {
-            charArray[i-1] = charArray[i];
+            if (charArray[i] > 0) {
+                oldCharID[j] = charArray[i];
+            }
+            j++;
         }
-        previousID = String.valueOf(charArray);
+
+        previousID = String.valueOf(oldCharID);
+        
         int IDNumber = Integer.parseInt(previousID);
-        IDNumber ++;
-        String newPassengerId = new String("p"+IDNumber);
+        IDNumber++;
+        if (IDNumber < 10) {
+            newPassengerId = ("p00" + IDNumber);
+
+        } else if (IDNumber < 100) {
+            newPassengerId = ("p0" + IDNumber);
+
+        } else {
+            newPassengerId = ("p" + IDNumber);
+
+        }
+
         return newPassengerId;
     }
 }

@@ -23,6 +23,7 @@ public class AirMilesMember extends Passenger{
 
     //paraeterized constructor
     public AirMilesMember(int yearsOfMembership, int points) {
+        
         this.yearsOfMembership = yearsOfMembership;
         airMilesPoints = points;
     }

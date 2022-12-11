@@ -28,7 +28,7 @@ public class Ticket {
     public void setFinalPrice(double price){
         finalPrice = price;
     }
-    public void setTicketNumber(String ticketNum){
+    public void setTicketNumber(int ticketNum){
         ticketNumber = ticketNum;
     }
     public Passenger getPassenger(){

@@ -16,6 +16,9 @@ public class Smart_Airline_Reservation_System {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        
+        
         Scanner scanner = new Scanner(System.in);
         
         //TESTING THE FLIGHT CLASS
@@ -26,7 +29,7 @@ public class Smart_Airline_Reservation_System {
         
         
         //TESTING THE PASSENGER CLASS
-        Passenger passenger = new Passenger("p1", "John", 21, "hello@gmail.com", "H1H 1H1");
+        Passenger passenger = new Passenger("p431", "John", 21, "hello@gmail.com", "H1H 1H1");
         
         String str = "hellogmailcom@.k";
         boolean isEmailValid = passenger.isEmailValid(str);
@@ -39,6 +42,9 @@ public class Smart_Airline_Reservation_System {
         
         
         //TESTING THE AirMilesMember CLASS
+        AirMilesMember airMilesMem = new AirMilesMember();
+        double finalPrice = airMilesMem.applyDiscount(200);
+        System.out.println(finalPrice);
         //TESTING THE NonAirMilesMember CLASS
         
         

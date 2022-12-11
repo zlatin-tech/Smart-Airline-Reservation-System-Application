@@ -10,7 +10,8 @@ package smart_airline_reservation_system;
  */
 public class NonAirMilesMember extends Passenger {
     //CONSTRUCTORS
-    public NonAirMilesMember(){
+    public NonAirMilesMember(int a){
+        super.setAge(a);
         
     }
     
