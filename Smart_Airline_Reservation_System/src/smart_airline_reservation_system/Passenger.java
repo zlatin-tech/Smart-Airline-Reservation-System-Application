@@ -18,11 +18,30 @@ public class Passenger {
 
     //CONSTRUCTORS
     public Passenger() {
-        
+        passengerId = "";
+        name = "";
+        age = 0;
+        email = "";
+        zipCode = "";
     }
 
     public Passenger(String passID, String n, int a, String eMail, String zipCode) {
-
+        passengerId = passID;
+        name = n;
+        age = a;
+        email = eMail;
+        this.zipCode = zipCode;
+    }
+    /**
+     * Constructor that is a deep copy of another Passenger of your choice
+     * @param p is the passenger you want to copy onto this constructor
+     */
+    public Passenger(Passenger p){
+        passengerId = p.passengerId;
+        name = p.name;
+        age = p.age;
+        email = p.email;
+        zipCode = p.zipCode;
     }
 
     //GETTERS & SETTERS
@@ -65,7 +84,8 @@ public class Passenger {
     public String getZipCode() {
         return zipCode;
     }
-
+//--------------END OF GETTERS AND SETTERS
+    
     /**
      * isEmailValid checks if the string inputed is not empty, has '@' that's
      * neither the first character nor comes before the '.' which is also mendatory
@@ -100,4 +120,17 @@ public class Passenger {
 
         return false;
     }//end of isEmailValid
+    
+    public String generateId(){
+        String previousID = getPassengerId();
+        char[] charArray = previousID.toCharArray();
+        for (int i = 1; i < charArray.length; i++) {
+            charArray[i-1] = charArray[i];
+        }
+        previousID = String.valueOf(charArray);
+        int IDNumber = Integer.parseInt(previousID);
+        IDNumber ++;
+        String newPassengerId = new String("p"+IDNumber);
+        return newPassengerId;
+    }
 }

@@ -12,7 +12,7 @@ public class Ticket {
     private Passenger passenger;
     private Flight flight;
     private double finalPrice;
-    private String ticketNumber;
+    private int ticketNumber;
     
     //CONSTRUCTOR
     public Ticket(Passenger p, Flight f, double price){
@@ -40,7 +40,7 @@ public class Ticket {
     public double getFinalPrice(){
         return finalPrice;
     }
-    public String getTicketNumber(){
+    public int getTicketNumber(){
         return ticketNumber;
     }
     
