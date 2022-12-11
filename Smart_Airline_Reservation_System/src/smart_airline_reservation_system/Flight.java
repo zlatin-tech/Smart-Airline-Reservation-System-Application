@@ -33,8 +33,9 @@ public class Flight {
     }
 
     /**
-     * Assigns every data member from a flight to this flight
-     * to make a deep copy
+     * Assigns every data member from a flight to this flight to make a deep
+     * copy
+     *
      * @param flight2 is the flight you want to copy onto this constructor
      */
     public Flight(Flight flight2) {
@@ -185,11 +186,15 @@ public class Flight {
         //no need to write "else" because it would've already returned true otherwise
         return false;
     }
-/**
- * equals method compares every data member of two flights to see if they are the same.
- * @param flight2 is the flight you want to compare to
- * @return false if one of the data members is different so the flights are different
- */
+
+    /**
+     * equals method compares every data member of two flights to see if they
+     * are the same.
+     *
+     * @param flight2 is the flight you want to compare to
+     * @return false if one of the data members is different so the flights are
+     * different
+     */
     public boolean equals(Flight flight2) {
         if (flightNumber == flight2.flightNumber
                 && origin.equals(flight2.origin)
@@ -211,7 +216,7 @@ public class Flight {
      */
     @Override
     public String toString() {
-        String str = "-------------------------------------";
+        String str = "-------------------------------------\n";
         str += "Flight Information\n";
         str += "*********************************\n";
         str += str.format("%-20s: %s\n", "Flight Number", flightNumber);
