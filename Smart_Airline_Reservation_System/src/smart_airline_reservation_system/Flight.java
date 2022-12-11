@@ -211,7 +211,7 @@ public class Flight {
      */
     @Override
     public String toString() {
-        String str = "";
+        String str = "-------------------------------------";
         str += "Flight Information\n";
         str += "*********************************\n";
         str += str.format("%-20s: %s\n", "Flight Number", flightNumber);
@@ -220,6 +220,7 @@ public class Flight {
         str += str.format("%-20s: %s\n", "Departure Date", departureDate);
         str += str.format("%-20s: %s\n", "Departure Time", departureTime);
         str += str.format("%-20s: %.2f\n", "Original Price", originalPrice);
+        str += "-------------------------------------";
         return str;
     }
 
