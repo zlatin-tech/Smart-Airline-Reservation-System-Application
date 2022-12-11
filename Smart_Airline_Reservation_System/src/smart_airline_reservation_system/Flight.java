@@ -9,6 +9,7 @@ package smart_airline_reservation_system;
  * @author 2249436
  */
 public class Flight {
+
     //DATA MEMBERS
     private int flightNumber;
     private String origin;
@@ -18,12 +19,21 @@ public class Flight {
     private int capacity;
     private int numberOfSeatsLeft;
     private double originalPrice;
-    
+
     //CONSTRURCTORS
-    public Flight(){}
-    
+    public Flight() {
+        flightNumber = 0;
+        origin = "";
+        destination = "";
+        departureDate = "";
+        departureTime = "";
+        capacity = 0;
+        numberOfSeatsLeft = 0;
+        originalPrice = 0;
+    }
+
     /**
-     * 
+     *
      * @param flightNum flight number
      * @param org origin
      * @param dest destination
@@ -33,107 +43,118 @@ public class Flight {
      * @param numSeatsLeft number of seats left
      * @param orgPrice original price
      */
-    public Flight(int flightNum,String org, String dest,String depDate,String depTime,int cap,int numSeatsLeft, double orgPrice){
-        
+    public Flight(int flightNum, String org, String dest, String depDate, String depTime, int cap, int numSeatsLeft, double orgPrice) {
+
     }
+
     //-----------GETTERS AND SETTERS---------
     /**
-     * 
+     *
      * @param flyNum flight number
      */
-    public void setFlightNumber(int flyNum){
+    public void setFlightNumber(int flyNum) {
         flightNumber = flyNum;
     }
-    
+
     /**
-     * 
+     *
      * @param org origin
      */
-    public void setOrigin(String org){
+    public void setOrigin(String org) {
         origin = org;
     }
+
     /**
-     * 
+     *
      * @param dest destination
      */
-    public void setDestination(String dest){
+    public void setDestination(String dest) {
         destination = dest;
     }
-    
+
     /**
-     * 
+     *
      * @param depDate departure date
      */
-    public void setDepartureDate(String depDate){
+    public void setDepartureDate(String depDate) {
         departureDate = depDate;
     }
-    
+
     /**
-     * 
+     *
      * @param depTime departure time
      */
-    public void setDepartureTime(String depTime){
+    public void setDepartureTime(String depTime) {
         departureTime = depTime;
     }
-    
+
     /**
-     * 
+     *
      * @param cap capacity
      */
-    public void setCapacity(int cap){
+    public void setCapacity(int cap) {
         capacity = cap;
     }
-    
+
     /**
-     * 
+     *
      * @param numSeatsLeft number of seats left
      */
-    public void setNumberOfSeatsLeft(int numSeatsLeft){
+    public void setNumberOfSeatsLeft(int numSeatsLeft) {
         numberOfSeatsLeft = numSeatsLeft;
     }
-    
+
     /**
-     * 
+     *
      * @param orgPrice original price
      */
-    public void setOriginalPrice(double orgPrice){
+    public void setOriginalPrice(double orgPrice) {
         originalPrice = orgPrice;
     }
-    
-    public int getFlightNumber(){
+
+    public int getFlightNumber() {
         return flightNumber;
     }
-    public String getOrigin(){
+
+    public String getOrigin() {
         return origin;
     }
-    public String getDestination(){
+
+    public String getDestination() {
         return destination;
     }
-    public String getDepartureDate(){
+
+    public String getDepartureDate() {
         return departureDate;
     }
-    public String getDepartureTime(){
+
+    public String getDepartureTime() {
         return departureTime;
     }
-    public int getCapacity(){
+
+    public int getCapacity() {
         return capacity;
     }
-    public int getNumberOfSeatsLeft(){
-        return numberOfSeatsLeft; 
+
+    public int getNumberOfSeatsLeft() {
+        return numberOfSeatsLeft;
     }
-    public double getOriginalPrice(){
+
+    public double getOriginalPrice() {
         return originalPrice;
     }
-   //--------END OF GETTERS AND SETTERS---
+    //--------END OF GETTERS AND SETTERS---
+
     /**
-     * check if there are any seats left
-     * if yes, it books a seat (number of seats decrements by 1)& returns true
-     * else, it returns false
-     * @return true if you managed to book a seat or false if there were no more seats left
+     * check if there are any seats left if yes, it books a seat (number of
+     * seats decrements by 1)& returns true else, it returns false
+     *
+     * @return true if you managed to book a seat or false if there were no more
+     * seats left
      */
-    public boolean bookASeat(){
+    public boolean bookASeat() {
         if (numberOfSeatsLeft > 0) {
-            numberOfSeatsLeft --;
+            numberOfSeatsLeft--;
             return true;
         }
         //no need to write "else" because it would've already returned true otherwise
@@ -157,5 +178,5 @@ public class Flight {
 //        str += str.format(str, args);
 //        return str;
 //    }
-    
+
 }

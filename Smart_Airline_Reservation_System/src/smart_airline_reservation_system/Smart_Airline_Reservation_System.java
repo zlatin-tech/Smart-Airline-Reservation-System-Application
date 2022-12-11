@@ -15,6 +15,11 @@ public class Smart_Airline_Reservation_System {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Passenger passenger = new Passenger();
+        
+        String str = "hellogmailcom@.k";
+        boolean isEmailValid = passenger.isEmailValid(str);
+        System.out.println(isEmailValid);
     }
     
 }

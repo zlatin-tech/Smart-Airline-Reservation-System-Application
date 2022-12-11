@@ -9,49 +9,95 @@ package smart_airline_reservation_system;
  * @author 2249436
  */
 public class Passenger {
-    
+
     private String passengerId;
     private String name;
     private int age;
     private String email;
     private String zipCode;
+
     //CONSTRUCTORS
-    public Passenger(){
+    public Passenger() {
         
     }
-    public Passenger(String passID, String n, int a, String eMail, String zipCode){
-        
+
+    public Passenger(String passID, String n, int a, String eMail, String zipCode) {
+
     }
+
     //GETTERS & SETTERS
-    public void setPassengerId(String passId){
+    public void setPassengerId(String passId) {
         passengerId = passId;
     }
-    public void setName(String n){
+
+    public void setName(String n) {
         name = n;
     }
-    public void setAge(int a){
+
+    public void setAge(int a) {
         age = a;
     }
-    public void setEmail(String eMail){
+
+    public void setEmail(String eMail) {
         email = eMail;
     }
-    public void setZipCode(String zipCode){
+
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
-    public String getPassengerId(){
+
+    public String getPassengerId() {
         return passengerId;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public int getAge(){
+
+    public int getAge() {
         return age;
     }
-    public String getEmail(){
+
+    public String getEmail() {
         return email;
     }
-    public String getZipCode(){
+
+    public String getZipCode() {
         return zipCode;
     }
-    
+
+    /**
+     * isEmailValid checks if the string inputed is not empty, has '@' that's
+     * neither the first character nor comes before the '.' which is also mendatory
+     * @param eMail is an email you want to see if it's valid
+     * @return true if the email is valid and false if it isn't
+     */
+    public boolean isEmailValid(String eMail) {
+        //Declaring variables to store index of '@' and index of '.'
+        int indexOfAtSymbol = 0;
+        int indexOfDot = 0;
+
+        //Checking if the email is empty
+        if (eMail.equals("")) {
+            return false;
+        }
+
+        for (int i = 0; i < eMail.length(); i++) {
+            //if character at current index is @ then store its index in indexOfAtSymbol
+            if (eMail.charAt(i) == '@') {
+                indexOfAtSymbol = i;
+            } 
+            //else if the character at current index is . then store its index in indexOfDot
+            else if (eMail.charAt(i) == '.') {
+                indexOfDot = i;
+            }
+
+        }//end of For Loop
+        //@ isn't first;            @ comes before '.';             '.' s index is smaller than the index of last character
+        if (indexOfAtSymbol != 0 && indexOfAtSymbol < indexOfDot && indexOfDot < (eMail.length()-1)) {
+            return true;
+        }
+
+        return false;
+    }//end of isEmailValid
 }
