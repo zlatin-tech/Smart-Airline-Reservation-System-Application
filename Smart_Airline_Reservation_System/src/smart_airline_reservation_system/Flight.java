@@ -21,7 +21,6 @@ public class Flight {
     private double originalPrice;
 
     //CONSTRURCTORS
-    
     public Flight() {
         flightNumber = 0;
         origin = "";
@@ -32,9 +31,14 @@ public class Flight {
         numberOfSeatsLeft = 0;
         originalPrice = 0;
     }
-    //deep copy constructor
-    public Flight(Flight flight2){
-        
+
+    /**
+     * Assigns every data member from a flight to this flight
+     * to make a deep copy
+     * @param flight2 is the flight you want to copy onto this constructor
+     */
+    public Flight(Flight flight2) {
+
         flightNumber = flight2.flightNumber;
         origin = flight2.origin;
         destination = flight2.destination;
@@ -43,7 +47,7 @@ public class Flight {
         capacity = flight2.capacity;
         numberOfSeatsLeft = flight2.numberOfSeatsLeft;
         originalPrice = flight2.originalPrice;
-        
+
     }
 
     /**
@@ -181,24 +185,41 @@ public class Flight {
         //no need to write "else" because it would've already returned true otherwise
         return false;
     }
-//    public boolean equals(Flight flight2){
-//        if (flightNumber == flight2.flightNumber) {
-//            if (origin.equals(origin)) {
-//                
-//            }
-//        }//end of all IF statements
-//        return false;
-//    }
-   public String toString(){
+/**
+ * equals method compares every data member of two flights to see if they are the same.
+ * @param flight2 is the flight you want to compare to
+ * @return false if one of the data members is different so the flights are different
+ */
+    public boolean equals(Flight flight2) {
+        if (flightNumber == flight2.flightNumber
+                && origin.equals(flight2.origin)
+                && destination.equals(flight2.destination)
+                && departureDate.equals(flight2.departureDate)
+                && departureTime.equals(flight2.departureTime)
+                && capacity == flight2.capacity
+                && numberOfSeatsLeft == flight2.numberOfSeatsLeft
+                && originalPrice == flight2.originalPrice) {
+            return true;
+        }//end of all IF statements
+        return false;
+    }
+
+    /**
+     * toString returns string formatted as a table of sorts
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
         String str = "";
         str += "Flight Information\n";
         str += "*********************************\n";
-        str += str.format("%-20s: %s\n", "Flight Number",flightNumber);
+        str += str.format("%-20s: %s\n", "Flight Number", flightNumber);
         str += str.format("%-20s: %s\n", "Origin", origin);
         str += str.format("%-20s: %s\n", "Destination", destination);
-        str += str.format("%-20s: %s\n", "Departure Date",departureDate);
-        str += str.format("%-20s: %s\n", "Departure Time",departureTime);
-        str += str.format("%-20s: %.2f\n", "Original Price",originalPrice);
+        str += str.format("%-20s: %s\n", "Departure Date", departureDate);
+        str += str.format("%-20s: %s\n", "Departure Time", departureTime);
+        str += str.format("%-20s: %.2f\n", "Original Price", originalPrice);
         return str;
     }
 
