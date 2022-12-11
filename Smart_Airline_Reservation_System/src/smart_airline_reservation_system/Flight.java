@@ -21,6 +21,7 @@ public class Flight {
     private double originalPrice;
 
     //CONSTRURCTORS
+    
     public Flight() {
         flightNumber = 0;
         origin = "";
@@ -190,12 +191,14 @@ public class Flight {
 //    }
    public String toString(){
         String str = "";
-        str += str.format("%-20s: \n", "Flight Number");
-//        str += str.format(str, args);
-//        str += str.format(str, args);
-//        str += str.format(str, args);
-//        str += str.format(str, args);
-//        str += str.format(str, args);
+        str += "Flight Information\n";
+        str += "*********************************\n";
+        str += str.format("%-20s: %s\n", "Flight Number",flightNumber);
+        str += str.format("%-20s: %s\n", "Origin", origin);
+        str += str.format("%-20s: %s\n", "Destination", destination);
+        str += str.format("%-20s: %s\n", "Departure Date",departureDate);
+        str += str.format("%-20s: %s\n", "Departure Time",departureTime);
+        str += str.format("%-20s: %.2f\n", "Original Price",originalPrice);
         return str;
     }
 

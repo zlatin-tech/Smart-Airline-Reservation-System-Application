@@ -20,7 +20,8 @@ public class Smart_Airline_Reservation_System {
         
         //TESTING THE FLIGHT CLASS
         
-        Flight flight = new Flight();
+        Flight flight = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        System.out.println(flight);
         //TESTING THE TICKET CLASS
         
         
