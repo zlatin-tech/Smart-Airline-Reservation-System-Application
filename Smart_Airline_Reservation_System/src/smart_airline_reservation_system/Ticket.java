@@ -8,7 +8,7 @@ package smart_airline_reservation_system;
  *
  * @author 2249436
  */
-public class Ticket {
+public class Ticket extends Flight {
 
     private Passenger passenger;
     private Flight flight;
@@ -73,13 +73,17 @@ public class Ticket {
     }
 
     public String toString() {
+        int flightNumber = super.getFlightNumber();
+        String origin = super.getOrigin();
+        String destination = super.getDestination();
         String str = "";
         str += "-------------------------------------";
         str += str.format("%-20s: %s\n", "Flight Number", flightNumber);
-        str += str.format("%-20s: %s\n", "Origin", origin);
+        
         str += str.format("%-20s: %s\n", "Destination", destination);
         str += "----------------------------";
-
+        str += str.format("%-20s: %s\n", "Destination", destination);
+        str += str.format("%-20s: %s\n", "Origin", origin);
         str += "-------------------------------------";
         return str;
     }
