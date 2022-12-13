@@ -59,6 +59,13 @@ public class TicketTest {
         instance.setFlight(f);
         // TODO review the generated test code and remove the default call to fail.
     }
+    public void test2SetFlight() {
+        System.out.println("setFlight");
+        Flight f = null;
+        Ticket instance = new Ticket();
+        instance.setFlight(f);
+        // TODO review the generated test code and remove the default call to fail.
+    }
 
     /**
      * Test of setFinalPrice method, of class Ticket.
