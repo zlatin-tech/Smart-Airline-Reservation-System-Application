@@ -167,13 +167,30 @@ public class PassengerTest {
     @Test
     public void testIsEmailValid() {
         System.out.println("isEmailValid");
-        String eMail = "";
+        String eMail = "hfdkjdashfka";
         Passenger instance = new Passenger();
         boolean expResult = false;
         boolean result = instance.isEmailValid(eMail);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    public void testIsEmail2Valid() {
+        System.out.println("isEmailValid");
+        String eMail = "hello@gmail.";
+        Passenger instance = new Passenger();
+        boolean expResult = false;
+        boolean result = instance.isEmailValid(eMail);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    public void testIsEmail3Valid() {
+        System.out.println("isEmailValid");
+        String eMail = "johnny@hotmail.com";
+        Passenger instance = new Passenger();
+        boolean expResult = false;
+        boolean result = instance.isEmailValid(eMail);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
