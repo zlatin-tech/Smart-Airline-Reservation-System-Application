@@ -41,6 +41,10 @@ public class Smart_Airline_Reservation_System {
         String passenger2ID = passenger2.generateId();
         passenger2.setAge(69);
         passenger2.setEmail("IDontKnowHowEmailsWork@com.");
+        isTheEmailValid(passenger2);
+        
+    
+        
         passenger2.setName("Alex");
         passenger2.setPassengerId(passenger2.generateId());
         passenger2.setZipCode("H2B2D2");
@@ -63,6 +67,11 @@ public class Smart_Airline_Reservation_System {
 
                         System.out.println(ticket1);
 
+    }
+    public static void isTheEmailValid(Passenger passenger){
+        if (passenger.isEmailValid(passenger.getEmail())== false) {
+            passenger.setEmail(null);
+        }
     }
     
 }
