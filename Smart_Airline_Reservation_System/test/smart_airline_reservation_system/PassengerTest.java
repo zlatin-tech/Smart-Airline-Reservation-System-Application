@@ -199,13 +199,30 @@ public class PassengerTest {
     @Test
     public void testIsZipCodeValid() {
         System.out.println("isZipCodeValid");
-        String zipCode = "";
+        String zipCode = "H1B1B1";
         Passenger instance = new Passenger();
         boolean expResult = false;
         boolean result = instance.isZipCodeValid(zipCode);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    public void testIsZipCode1Valid() {
+        System.out.println("isZipCodeValid");
+        String zipCode = "1F1 F1F";
+        Passenger instance = new Passenger();
+        boolean expResult = false;
+        boolean result = instance.isZipCodeValid(zipCode);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    public void testIsZipCode2Valid() {
+        System.out.println("isZipCodeValid");
+        String zipCode = "H1B 1R1";
+        Passenger instance = new Passenger();
+        boolean expResult = true;
+        boolean result = instance.isZipCodeValid(zipCode);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
