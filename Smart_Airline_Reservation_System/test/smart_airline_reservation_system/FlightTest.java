@@ -78,7 +78,7 @@ public class FlightTest {
     @Test
     public void testSetDepartureDate() {
         System.out.println("setDepartureDate");
-        String depDate = "";
+        String depDate = "03/April/2022";
         Flight instance = new Flight();
         instance.setDepartureDate(depDate);
         // TODO review the generated test code and remove the default call to fail.
@@ -90,11 +90,10 @@ public class FlightTest {
     @Test
     public void testSetDepartureTime() {
         System.out.println("setDepartureTime");
-        String depTime = "";
+        String depTime = "08:10am";
         Flight instance = new Flight();
         instance.setDepartureTime(depTime);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -103,11 +102,10 @@ public class FlightTest {
     @Test
     public void testSetCapacity() {
         System.out.println("setCapacity");
-        int cap = 0;
+        int cap = 200;
         Flight instance = new Flight();
         instance.setCapacity(cap);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -116,11 +114,10 @@ public class FlightTest {
     @Test
     public void testSetNumberOfSeatsLeft() {
         System.out.println("setNumberOfSeatsLeft");
-        int numSeatsLeft = 0;
+        int numSeatsLeft = 200;
         Flight instance = new Flight();
         instance.setNumberOfSeatsLeft(numSeatsLeft);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -129,11 +126,10 @@ public class FlightTest {
     @Test
     public void testSetOriginalPrice() {
         System.out.println("setOriginalPrice");
-        double orgPrice = 0.0;
+        double orgPrice = 500.45;
         Flight instance = new Flight();
         instance.setOriginalPrice(orgPrice);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -142,12 +138,11 @@ public class FlightTest {
     @Test
     public void testGetFlightNumber() {
         System.out.println("getFlightNumber");
-        Flight instance = new Flight();
-        int expResult = 0;
+        Flight instance = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        int expResult = 201;
         int result = instance.getFlightNumber();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -156,12 +151,11 @@ public class FlightTest {
     @Test
     public void testGetOrigin() {
         System.out.println("getOrigin");
-        Flight instance = new Flight();
-        String expResult = "";
+        Flight instance = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        String expResult = "Quebec City";
         String result = instance.getOrigin();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -170,12 +164,11 @@ public class FlightTest {
     @Test
     public void testGetDestination() {
         System.out.println("getDestination");
-        Flight instance = new Flight();
-        String expResult = "";
+        Flight instance = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        String expResult = "New York";
         String result = instance.getDestination();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -184,12 +177,11 @@ public class FlightTest {
     @Test
     public void testGetDepartureDate() {
         System.out.println("getDepartureDate");
-        Flight instance = new Flight();
-        String expResult = "";
+        Flight instance = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        String expResult = "03/April/2022";
         String result = instance.getDepartureDate();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -198,12 +190,11 @@ public class FlightTest {
     @Test
     public void testGetDepartureTime() {
         System.out.println("getDepartureTime");
-        Flight instance = new Flight();
-        String expResult = "";
+        Flight instance = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        String expResult = "08:10am";
         String result = instance.getDepartureTime();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -212,12 +203,11 @@ public class FlightTest {
     @Test
     public void testGetCapacity() {
         System.out.println("getCapacity");
-        Flight instance = new Flight();
-        int expResult = 0;
+        Flight instance = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        int expResult = 200;
         int result = instance.getCapacity();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -226,12 +216,11 @@ public class FlightTest {
     @Test
     public void testGetNumberOfSeatsLeft() {
         System.out.println("getNumberOfSeatsLeft");
-        Flight instance = new Flight();
-        int expResult = 0;
+        Flight instance = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        int expResult = 200;
         int result = instance.getNumberOfSeatsLeft();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -240,12 +229,11 @@ public class FlightTest {
     @Test
     public void testGetOriginalPrice() {
         System.out.println("getOriginalPrice");
-        Flight instance = new Flight();
-        double expResult = 0.0;
+        Flight instance = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        double expResult = 350.0;
         double result = instance.getOriginalPrice();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -254,12 +242,11 @@ public class FlightTest {
     @Test
     public void testBookASeat() {
         System.out.println("bookASeat");
-        Flight instance = new Flight();
-        boolean expResult = false;
+        Flight instance = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        boolean expResult = true;
         boolean result = instance.bookASeat();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -274,7 +261,6 @@ public class FlightTest {
         boolean result = instance.equals(flight2);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -288,7 +274,6 @@ public class FlightTest {
         String result = instance.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
