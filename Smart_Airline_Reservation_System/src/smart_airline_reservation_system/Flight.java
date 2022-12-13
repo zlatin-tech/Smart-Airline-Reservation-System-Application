@@ -69,7 +69,7 @@ public class Flight {
         departureDate = depDate;
         departureTime = depTime;
         capacity = cap;
-        numberOfSeatsLeft = numSeatsLeft;
+        numberOfSeatsLeft = cap;
         originalPrice = orgPrice;
     }
 

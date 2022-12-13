@@ -4,7 +4,7 @@
  */
 package smart_airline_reservation_system;
 
-import java.util.Scanner;
+
 
 /**
  *
@@ -17,45 +17,52 @@ public class Smart_Airline_Reservation_System {
      */
     public static void main(String[] args) {
         
-        
-        
-        Scanner scanner = new Scanner(System.in);
-        
         //TESTING THE FLIGHT CLASS
-        
+
         Flight flight = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
         System.out.println(flight);
-        //TESTING THE TICKET CLASS
-        
-        
+        System.out.println("Book a seat: "+ flight.bookASeat());
+        System.out.println("Number of seats left: "+ flight.getNumberOfSeatsLeft());
+        System.out.println("Book a seat: "+ flight.bookASeat());
+        System.out.println("Number of seats left: "+ flight.getNumberOfSeatsLeft());
         //TESTING THE PASSENGER CLASS
-        Passenger passenger = new Passenger("p001", "John", 21, "hello@gmail.com", "H1H 1H1");
-        
+        AirMilesMember passenger = new AirMilesMember("p001", "John", 21, "hello@gmail.com", "H1H 1H2",6,6000);
         System.out.println(passenger);
         
         
         
-        String str = "hellogmailcom@.k";
-        boolean isEmailValid = passenger.isEmailValid(str);
-        String str1 = passenger.generateId();
-        System.out.println(str1);
-        System.out.println(isEmailValid);
         
+       
+        System.out.println("Generate ID: "+ passenger.generateId());
+        System.out.println("Is email valid: "+passenger.isEmailValid(passenger.getEmail()));
+        System.out.println("Is Zip Code valid: "+ passenger.isZipCodeValid(passenger.getZipCode()));
         
+        NonAirMilesMember passenger2 = new NonAirMilesMember();
+        String passenger2ID = passenger2.generateId();
+        passenger2.setAge(69);
+        passenger2.setEmail("IDontKnowHowEmailsWork@com.");
+        passenger2.setName("Alex");
+        passenger2.setPassengerId(passenger2.generateId());
+        passenger2.setZipCode("H2B2D2");
+        System.out.println(passenger2);
         
         
         
         //TESTING THE AirMilesMember CLASS
-        AirMilesMember airMilesMem = new AirMilesMember();
-        double finalPrice = airMilesMem.applyDiscount(200);
-        System.out.println(finalPrice);
+//        AirMilesMember airMilesMem = new AirMilesMember();
+//        double finalPrice = airMilesMem.applyDiscount(200);
+//        System.out.println(finalPrice);
         //TESTING THE NonAirMilesMember CLASS
         
         
-        
-        
-        
-        
+         //TESTING THE TICKET CLASS
+        Ticket ticket = new Ticket(passenger, flight, passenger.applyDiscount(flight.getOriginalPrice()));
+                Ticket ticket1 = new Ticket(passenger, flight, passenger.applyDiscount(flight.getOriginalPrice()));
+
+        System.out.println(ticket);
+
+                        System.out.println(ticket1);
+
     }
     
 }

@@ -10,12 +10,23 @@ package smart_airline_reservation_system;
  */
 public class NonAirMilesMember extends Passenger {
     //CONSTRUCTORS
-    public NonAirMilesMember(int a){
+    public NonAirMilesMember(String passID, String n, int a, String eMail, String zipCode){
+        super(passID, n, a, eMail, zipCode);
         super.setAge(a);
         
     }
+    public NonAirMilesMember(){
+        super();
+    }
     
     //MAIN METHOD(S)
+    /**
+     * applyDiscount checks age of the client
+     * if they're over 65, they get 10% discount
+     * otherwise no discount
+     * @param p is the original price
+     * @return 
+     */
     public double applyDiscount(double p){
         double discount = 0;
         double finalPrice;

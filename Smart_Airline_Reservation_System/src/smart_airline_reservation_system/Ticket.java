@@ -8,35 +8,28 @@ package smart_airline_reservation_system;
  *
  * @author 2249436
  */
-public class Ticket extends Flight {
+public class Ticket{
 
     private Passenger passenger;
     private Flight flight;
     private double finalPrice;
     private int ticketNumber;
+    private static int ticketCount = 1;
 
     //CONSTRUCTOR
     public Ticket(Passenger p, Flight f, double price) {
         //deep copy of the passenger
-        passenger.setAge(p.getAge());
-        passenger.setEmail(p.getEmail());
-        passenger.setName(p.getName());
-        passenger.setPassengerId(p.getPassengerId());
-        passenger.setZipCode(p.getZipCode());
-        //deep copy of the flight
-        flight.setCapacity(f.getCapacity());
-        flight.setDepartureDate(f.getDepartureDate());
-        flight.setDepartureTime(f.getDepartureTime());
-        flight.setDestination(f.getDestination());
-        flight.setFlightNumber(f.getFlightNumber());
-        flight.setNumberOfSeatsLeft(f.getNumberOfSeatsLeft());
-        flight.setOrigin(f.getOrigin());
-        flight.setOriginalPrice(f.getOriginalPrice());
+        passenger= p;
+       
+        flight = f;
         //assigning price to finalPrice
         finalPrice = price;
+        ticketNumber = ticketCount++;
+     
     }
     public Ticket(){
-        
+        finalPrice = 0;
+        ticketNumber = 0;
     }
 
     //GETTERS & SETTERS
@@ -51,11 +44,9 @@ public class Ticket extends Flight {
     public void setFinalPrice(double price) {
         finalPrice = price;
     }
+    
 
-    public void setTicketNumber(int ticketNum) {
-        ticketNumber = ticketNum;
-    }
-
+    
     public Passenger getPassenger() {
         return passenger;
     }
@@ -71,20 +62,26 @@ public class Ticket extends Flight {
     public int getTicketNumber() {
         return ticketNumber;
     }
-
+    
+    /**
+     * toString formats the ticket information as asked by the teacher
+     * @return 
+     */
+    @Override
     public String toString() {
-        int flightNumber = super.getFlightNumber();
-        String origin = super.getOrigin();
-        String destination = super.getDestination();
         String str = "";
-        str += "-------------------------------------";
-        str += str.format("%-20s: %s\n", "Flight Number", flightNumber);
-        
-        str += str.format("%-20s: %s\n", "Destination", destination);
-        str += "----------------------------";
-        str += str.format("%-20s: %s\n", "Destination", destination);
-        str += str.format("%-20s: %s\n", "Origin", origin);
-        str += "-------------------------------------";
+        str += "-------------------------------------\n";
+        str += str.format("%-20s: %s\n", "Flight Number", flight.getFlightNumber());
+        str += str.format("%-20s: %s\n", "Passenger Name", passenger.getName());
+        str += str.format("%-20s: %s\n", "Ticket Number",getTicketNumber());
+        str += "----------------------------\n";
+        str += str.format("%-20s: %s\n", "Origin", flight.getOrigin());
+        str += str.format("%-20s: %s\n", "Destination", flight.getDestination());
+        str += str.format("%-20s: %s\n", "Departure Date", flight.getDepartureDate());
+        str += str.format("%-20s: %s\n", "Departure Time", flight.getDepartureTime());
+        str += str.format("%-20s: %.2f\n", "Original Price", flight.getOriginalPrice());
+        str += str.format("%-20s: %.2f\n", "Ticket Price", this.getFinalPrice());
+        str += "-------------------------------------\n";
         return str;
     }
 

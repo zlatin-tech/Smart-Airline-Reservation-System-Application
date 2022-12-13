@@ -134,7 +134,14 @@ public class Passenger {
         boolean isZipValid = false;
         if (zipCode.length() != 7) {
             isZipValid = false;
-        } else if (zipCode.contains("A1A 1A1")) {
+        } 
+        else if (Character.isLetter(zipCode.charAt(0))
+                && Character.isDigit(zipCode.charAt(1))
+                && Character.isLetter(zipCode.charAt(2))
+                && zipCode.charAt(3)== ' '
+                && Character.isDigit(zipCode.charAt(4))
+                && Character.isLetter(zipCode.charAt(5))
+                && Character.isDigit(zipCode.charAt(6))) {
             isZipValid = true;
         }
 
@@ -185,13 +192,17 @@ public class Passenger {
         return newPassengerId;
     }
 
+    /**
+     * formats some information of passenger in a table as a String
+     * @return String of information
+     */
     public String toString() {
-        String str = "-------------------------------------";
-        str = "Passenger Information\n";
+        String str = "-------------------------------------\n";
+        str += "Passenger Information\n";
         str += "*********************************\n";
         str += str.format("%-20s: %s\n", "Passenger Number", passengerId);
         str += str.format("%-20s: %s\n", "Passenger Name", name);
-        str += str.format("%-20s: %s\n", "Passenger email", email);
+        str += str.format("%-20s: %s\n", "Passenger email", email);       
         str += "-------------------------------------";
 
         return str;

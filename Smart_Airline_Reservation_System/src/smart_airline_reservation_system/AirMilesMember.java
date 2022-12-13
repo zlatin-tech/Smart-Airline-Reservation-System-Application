@@ -17,22 +17,24 @@ public class AirMilesMember extends Passenger{
     //CONSTRUCTORS
     //default constructor
     public AirMilesMember() {
+        super();
         yearsOfMembership = 0;
         airMilesPoints = 0;
     }
 
+
     //paraeterized constructor
-    public AirMilesMember(int yearsOfMembership, int points) {
-        
+    public AirMilesMember(String passID, String n, int a, String eMail, String zipCode,int yearsOfMembership, int points) {
+        super(passID, n, a, eMail, zipCode);
         this.yearsOfMembership = yearsOfMembership;
         airMilesPoints = points;
     }
 
     //deep copy constructor
-    public AirMilesMember(AirMilesMember member2) {
-        yearsOfMembership = member2.yearsOfMembership;
-        airMilesPoints = member2.airMilesPoints;
-    }
+//    public AirMilesMember(AirMilesMember member2) {
+//        yearsOfMembership = member2.yearsOfMembership;
+//        airMilesPoints = member2.airMilesPoints;
+//    }
 
     //MAIN METHOD(S)
     /**
