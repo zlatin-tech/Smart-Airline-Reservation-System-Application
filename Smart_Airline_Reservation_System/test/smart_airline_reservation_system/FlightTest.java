@@ -1,38 +1,38 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
  */
 package smart_airline_reservation_system;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
- * @author zlatintsvetkov
+ * @author 2249436
  */
 public class FlightTest {
     
     public FlightTest() {
     }
     
-    @BeforeAll
+    @BeforeClass
     public static void setUpClass() {
     }
     
-    @AfterAll
+    @AfterClass
     public static void tearDownClass() {
     }
     
-    @BeforeEach
+    @Before
     public void setUp() {
     }
     
-    @AfterEach
+    @After
     public void tearDown() {
     }
 
@@ -42,11 +42,10 @@ public class FlightTest {
     @Test
     public void testSetFlightNumber() {
         System.out.println("setFlightNumber");
-        int flyNum = 0;
+        int flyNum = 123;
         Flight instance = new Flight();
         instance.setFlightNumber(flyNum);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -55,11 +54,10 @@ public class FlightTest {
     @Test
     public void testSetOrigin() {
         System.out.println("setOrigin");
-        String org = "";
+        String org = "Quebec";
         Flight instance = new Flight();
         instance.setOrigin(org);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -68,11 +66,10 @@ public class FlightTest {
     @Test
     public void testSetDestination() {
         System.out.println("setDestination");
-        String dest = "";
+        String dest = "America";
         Flight instance = new Flight();
         instance.setDestination(dest);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -85,7 +82,6 @@ public class FlightTest {
         Flight instance = new Flight();
         instance.setDepartureDate(depDate);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -247,7 +243,7 @@ public class FlightTest {
         Flight instance = new Flight();
         double expResult = 0.0;
         double result = instance.getOriginalPrice();
-        assertEquals(expResult, result, 0);
+        assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
