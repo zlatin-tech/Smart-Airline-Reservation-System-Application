@@ -42,13 +42,22 @@ public class NonAirMilesMemberTest {
     @Test
     public void testApplyDiscount() {
         System.out.println("applyDiscount");
-        double p = 0.0;
-        NonAirMilesMember instance = new NonAirMilesMember();
-        double expResult = 0.0;
+        double p = 350.50;
+        NonAirMilesMember instance = new NonAirMilesMember("p037","Bob Ben", 69,"bob@hotmail.ca", "L7N 8H9");
+        double expResult = 315.45;
         double result = instance.applyDiscount(p);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    @Test
+    public void test2ApplyDiscount() {
+        System.out.println("applyDiscount");
+        double p = 350.50;
+        NonAirMilesMember instance = new NonAirMilesMember("p037","Bob Ben", 45,"bob@hotmail.ca", "L7N 8H9");
+        double expResult = 350.50;
+        double result = instance.applyDiscount(p);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
     }
     
 }
