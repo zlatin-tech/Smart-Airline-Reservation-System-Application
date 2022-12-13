@@ -39,7 +39,7 @@ public class Flight {
      * @param flight2 is the flight you want to copy onto this constructor
      */
     public Flight(Flight flight2) {
-
+        
         flightNumber = flight2.flightNumber;
         origin = flight2.origin;
         destination = flight2.destination;
