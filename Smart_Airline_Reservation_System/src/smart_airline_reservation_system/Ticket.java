@@ -18,7 +18,7 @@ public class Ticket{
 
     //CONSTRUCTOR
     public Ticket(Passenger p, Flight f, double price) {
-        //deep copy of the passenger
+        
         passenger= p;
        
         flight = f;
