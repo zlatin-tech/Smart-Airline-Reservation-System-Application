@@ -42,7 +42,7 @@ public class TicketTest {
     @Test
     public void testSetPassenger() {
         System.out.println("setPassenger");
-        Passenger p = new Passenger();
+        Passenger p = new Passenger("p001", "John", 21, "hello@gmail.com", "H1H 1H2");
         Ticket instance = new Ticket();
         instance.setPassenger(p);
         // TODO review the generated test code and remove the default call to fail.
@@ -54,14 +54,15 @@ public class TicketTest {
     @Test
     public void testSetFlight() {
         System.out.println("setFlight");
-        Flight f = null;
+        Flight f = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
         Ticket instance = new Ticket();
         instance.setFlight(f);
         // TODO review the generated test code and remove the default call to fail.
     }
+    @Test
     public void test2SetFlight() {
         System.out.println("setFlight");
-        Flight f = null;
+        Flight f = new Flight();
         Ticket instance = new Ticket();
         instance.setFlight(f);
         // TODO review the generated test code and remove the default call to fail.
@@ -73,7 +74,7 @@ public class TicketTest {
     @Test
     public void testSetFinalPrice() {
         System.out.println("setFinalPrice");
-        double price = 0.0;
+        double price = 69.96;
         Ticket instance = new Ticket();
         instance.setFinalPrice(price);
         // TODO review the generated test code and remove the default call to fail.
@@ -91,6 +92,17 @@ public class TicketTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+    @Test
+    public void test2GetPassenger() {
+        System.out.println("getPassenger");
+        Passenger p = new Passenger("p001", "John", 21, "hello@gmail.com", "H1H 1H2");
+        Flight f = new Flight();
+        Ticket instance = new Ticket(p,f,350.00);
+        Passenger expResult = p;
+        Passenger result = instance.getPassenger();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
 
     /**
      * Test of getFlight method, of class Ticket.
@@ -104,6 +116,17 @@ public class TicketTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+     @Test
+    public void test2GetFlight() {
+        System.out.println("getFlight");
+        Flight f = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        Passenger p = new Passenger();
+        Ticket instance = new Ticket(p,f,f.getOriginalPrice());
+        Flight expResult = f;
+        Flight result = instance.getFlight();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
 
     /**
      * Test of getFinalPrice method, of class Ticket.
@@ -112,7 +135,8 @@ public class TicketTest {
     public void testGetFinalPrice() {
         System.out.println("getFinalPrice");
         Ticket instance = new Ticket();
-        double expResult = 0.0;
+        instance.setFinalPrice(150.69);
+        double expResult = 150.69;
         double result = instance.getFinalPrice();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
@@ -125,7 +149,17 @@ public class TicketTest {
     public void testGetTicketNumber() {
         System.out.println("getTicketNumber");
         Ticket instance = new Ticket();
-        int expResult = 0;
+        int expResult = 4;
+        int result = instance.getTicketNumber();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    @Test
+    public void test2GetTicketNumber() {
+        System.out.println("getTicketNumber");
+        Ticket ticket = new Ticket();
+        Ticket instance = new Ticket();
+        int expResult = 2;
         int result = instance.getTicketNumber();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -137,8 +171,21 @@ public class TicketTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Ticket instance = new Ticket();
-        String expResult = "";
+        Passenger p = new Passenger("p001", "John Smith", 21, "hello@gmail.com", "H1H 1H2");
+        Flight f = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        Ticket instance = new Ticket(p,f,69.69);
+        String expResult = ("-------------------------------------\n"+
+                            "Flight Number       : 201\n"+
+                            "Passenger Name      : John Smith\n"+
+                            "Ticket Number       : 3\n"+
+                            "----------------------------\n"+
+                            "Origin              : Quebec City\n"+
+                            "Destination         : New York\n"+
+                            "Departure Date      : 03/April/2022\n"+
+                            "Departure Time      : 08:10am\n"+
+                            "Original Price      : 350.00\n"+
+                            "Ticket Price        : 69.69\n"+
+                            "-------------------------------------\n");
         String result = instance.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

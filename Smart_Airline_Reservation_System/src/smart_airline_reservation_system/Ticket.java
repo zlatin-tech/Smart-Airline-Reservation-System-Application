@@ -29,7 +29,7 @@ public class Ticket{
     }
     public Ticket(){
         finalPrice = 0;
-        ticketNumber = 0;
+        ticketNumber = ticketCount;
     }
 
     //GETTERS & SETTERS
