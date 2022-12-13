@@ -174,6 +174,7 @@ public class PassengerTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+    @Test
     public void testIsEmail2Valid() {
         System.out.println("isEmailValid");
         String eMail = "hello@gmail.";
@@ -183,11 +184,12 @@ public class PassengerTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+    @Test
     public void testIsEmail3Valid() {
         System.out.println("isEmailValid");
         String eMail = "johnny@hotmail.com";
         Passenger instance = new Passenger();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.isEmailValid(eMail);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -206,6 +208,7 @@ public class PassengerTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+    @Test
     public void testIsZipCode1Valid() {
         System.out.println("isZipCodeValid");
         String zipCode = "1F1 F1F";
@@ -215,6 +218,7 @@ public class PassengerTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+    @Test
     public void testIsZipCode2Valid() {
         System.out.println("isZipCodeValid");
         String zipCode = "H1B 1R1";
@@ -237,6 +241,7 @@ public class PassengerTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+    @Test
     public void test2GenerateId() {
         System.out.println("generateId");
         Passenger instance = new Passenger("p024", "John", 21, "hello@gmail.com", "H1H 1H2");
@@ -245,6 +250,7 @@ public class PassengerTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+    @Test
     public void test3GenerateId() {
         System.out.println("generateId");
         Passenger instance = new Passenger("p023", "John", 21, "hello@gmail.com", "H1H 1H2");

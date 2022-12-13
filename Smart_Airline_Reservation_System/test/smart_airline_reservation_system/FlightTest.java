@@ -255,9 +255,19 @@ public class FlightTest {
     @Test
     public void testEquals() {
         System.out.println("equals");
-        Flight flight2 = null;
-        Flight instance = new Flight();
+        Flight instance = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        Flight flight2 = new Flight();
         boolean expResult = false;
+        boolean result = instance.equals(flight2);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    @Test
+    public void test2Equals() {
+        System.out.println("equals");
+        Flight instance = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        Flight flight2 = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        boolean expResult = true;
         boolean result = instance.equals(flight2);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -269,8 +279,17 @@ public class FlightTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Flight instance = new Flight();
-        String expResult = "";
+        Flight instance = new Flight(201, "Quebec City", "New York", "03/April/2022", "08:10am", 200, 50, 350.0);
+        String expResult = ("-------------------------------------\n"+
+                            "Flight Information\n"+
+                            "*********************************\n"+
+                            "Flight Number       : 201\n"+
+                            "Origin              : Quebec City\n"+
+                            "Destination         : New York\n"+
+                            "Departure Date      : 03/April/2022\n"+
+                            "Departure Time      : 08:10am\n"+
+                            "Original Price      : 350.00\n"+
+                "-------------------------------------");
         String result = instance.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
