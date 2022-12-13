@@ -25,6 +25,7 @@ public class Smart_Airline_Reservation_System {
         System.out.println("Number of seats left: "+ flight.getNumberOfSeatsLeft());
         System.out.println("Book a seat: "+ flight.bookASeat());
         System.out.println("Number of seats left: "+ flight.getNumberOfSeatsLeft());
+        
         //TESTING THE PASSENGER CLASS
         AirMilesMember passenger = new AirMilesMember("p001", "John", 21, "hello@gmail.com", "H1H 1H2",6,6000);
         System.out.println(passenger);

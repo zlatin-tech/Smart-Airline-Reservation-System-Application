@@ -154,12 +154,11 @@ public class PassengerTest {
     @Test
     public void testGetZipCode() {
         System.out.println("getZipCode");
-        Passenger instance = new Passenger();
-        String expResult = "";
+        Passenger instance = new Passenger("p001", "John", 21, "hello@gmail.com", "H1H 1H2");
+        String expResult = "H1H 1H2";
         String result = instance.getZipCode();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
