@@ -69,6 +69,11 @@ public class Smart_Airline_Reservation_System {
                         System.out.println(ticket1);
 
     }
+    /**
+     * Runs the method isEmailValid depending on if it returns
+     * true or false, it sets the email to the input or null respectively
+     * @param passenger who's email you want to see if it's valid
+     */
     public static void isTheEmailValid(Passenger passenger){
         if (passenger.isEmailValid(passenger.getEmail())== false) {
             passenger.setEmail(null);
