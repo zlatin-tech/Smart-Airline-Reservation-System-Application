@@ -231,12 +231,27 @@ public class PassengerTest {
     @Test
     public void testGenerateId() {
         System.out.println("generateId");
-        Passenger instance = new Passenger();
-        String expResult = "";
+        Passenger instance = new Passenger("p001", "John", 21, "hello@gmail.com", "H1H 1H2");
+        String expResult = "p002";
         String result = instance.generateId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    public void test2GenerateId() {
+        System.out.println("generateId");
+        Passenger instance = new Passenger("p024", "John", 21, "hello@gmail.com", "H1H 1H2");
+        String expResult = "p025";
+        String result = instance.generateId();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    public void test3GenerateId() {
+        System.out.println("generateId");
+        Passenger instance = new Passenger("p123", "John", 21, "hello@gmail.com", "H1H 1H2");
+        String expResult = "p124";
+        String result = instance.generateId();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
