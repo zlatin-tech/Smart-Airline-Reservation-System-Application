@@ -42,11 +42,10 @@ public class TicketTest {
     @Test
     public void testSetPassenger() {
         System.out.println("setPassenger");
-        Passenger p = null;
+        Passenger p = new Passenger();
         Ticket instance = new Ticket();
         instance.setPassenger(p);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -59,7 +58,6 @@ public class TicketTest {
         Ticket instance = new Ticket();
         instance.setFlight(f);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -72,7 +70,6 @@ public class TicketTest {
         Ticket instance = new Ticket();
         instance.setFinalPrice(price);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -86,7 +83,6 @@ public class TicketTest {
         Passenger result = instance.getPassenger();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -100,7 +96,6 @@ public class TicketTest {
         Flight result = instance.getFlight();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -114,7 +109,6 @@ public class TicketTest {
         double result = instance.getFinalPrice();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -128,7 +122,6 @@ public class TicketTest {
         int result = instance.getTicketNumber();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -142,7 +135,6 @@ public class TicketTest {
         String result = instance.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
